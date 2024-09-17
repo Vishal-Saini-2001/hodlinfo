@@ -9,7 +9,7 @@ function App() {
   const [data, setdata] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      await axios.get('http://localhost:3000/list')
+      await axios.get('https://hodlinfo-backend-ueyj.onrender.com/list')
         .then(res => 
           {
             setdata(res.data)
