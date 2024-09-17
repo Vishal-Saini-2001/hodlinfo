@@ -1,0 +1,126 @@
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: "Oswald", sans-serif;
+    background-color: rgb(25, 29, 40);
+    transition: all 0.3s ease-in-out;
+}
+
+#left {
+    color: rgb(61, 198, 193);
+    font-weight: 500;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+
+.mid {
+    margin-left: 5%;
+}
+
+.mid .dropdown {
+    padding: 8px 17px;
+    border-radius: 14px;
+    margin: 2px 10px;
+    background-color: rgb(46, 50, 65);
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+.mid button {
+    padding: 8px 17px;
+    border-radius: 14px;
+    margin: 2px 10px;
+    background-color: rgb(46, 50, 65);
+    color: white;
+    border: none;
+}
+
+#right {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#right button {
+    border: none;
+    outline: none;
+    background-color: rgb(61, 198, 193);
+    padding: 8px 20px;
+    border-radius: 11px;
+    margin: 2px 5px;
+    color: white;
+}
+
+#right #toggle-btn {
+    height: 30px;
+    width: 60px;
+    border-radius: 15px;
+    padding: 3px;
+    background-color: rgb(84, 91, 98);
+}
+
+
+#mid2 {
+    padding: 20px 5px;
+    background-color: rgb(25, 29, 40);
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width:925px) {
+    .mid {
+        display: none;
+        margin-left: 0px;
+    }
+
+    #mid2 {
+        display: block;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width:648px) {
+
+    #navbar{
+        padding: 10px 0px;
+    }
+
+    #left {
+        font-weight: 400;
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+}
+
+@media screen and (max-width:503px) {
+
+    #navbar {
+        justify-content: space-between;
+        padding: 20px 5px;
+    }
+
+    #right button {
+        padding: 4px 10px;
+        border-radius: 8px;
+        margin: 2px 0px;
+        font-size: small;
+    }
+    
+    #right #toggle-btn {
+        height: 25px;
+        width: 40px;
+    }
+
+    #right {
+        width: 240px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

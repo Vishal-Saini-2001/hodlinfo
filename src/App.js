@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import axios from 'axios'
+import Navbar from './comp/Navbar';
+import Home from './comp/Home';
+import Footer from './comp/Footer';
 
 function App() {
+  const [data, setdata] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios.get('http://localhost:3000/list')
+        .then(res => 
+          {
+            setdata(res.data)
+          })
+        .catch(err => console.log(err))
+    }
+    fetchData()
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <Home data={data}/>
+      <Footer/>
+    </>
   );
 }
 
